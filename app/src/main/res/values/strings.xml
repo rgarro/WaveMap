@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">WaveCount</string>
+    <string-array name="surf_spots">
+        <item>Barranca</item>
+        <item>Caldera</item>
+        <item>Tivives</item>
+        <item>Jaco</item>
+    </string-array>
 </resources>
