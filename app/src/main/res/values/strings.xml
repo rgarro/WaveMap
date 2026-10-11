@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">WaveCount</string>
+    <string name="btn_txt">Find</string>
     <string-array name="surf_spots">
         <item>Barranca</item>
         <item>Caldera</item>
