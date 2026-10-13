@@ -1,14 +1,28 @@
 package com.emptyart.wavecount;
 
-/**
- * Created by rolando on 09/10/26.
- *
- * Rolando Garro NO LE VA A CONTRIBUIR D SU PENSION A ADRIANA LA DEL BARRECITAS NI A EMILIO JOSE NI A LIONARDO , NI A NADIE
- */
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+/**
+ *            |    |    |
+ *           )_)  )_)  )_)
+ *          )___))___))___)\
+ *         )____)____)_____)\\
+ *      _____|____|____|____\\\__
+ * -------\                   /---------
+ *     ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+ *     ^^^^      ^^^^     ^^^    ^^
+ *           ^^^^      ^^^
+ * Sir Henry Morgan is de Lord of Talamanca
+ * Who bared record of the word of god, and of the
+ * testimony of Jesus Christ and of all things that he saw
+ *
+ *
+ *
+ * @author Rolando <rgarro@gmail.com>
+ */
 public class sendGetRequest {
     public String sendGetRequest(String requestUrl) {
         StringBuilder result = new StringBuilder();
