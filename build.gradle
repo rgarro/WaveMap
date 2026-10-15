@@ -10,11 +10,13 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
-        implementation 'com.expediagroup:expediagroup-sdk-rest:{latest-version}' // For REST SDK
-        implementation 'com.expediagroup:expediagroup-sdk-graphql:{latest-version}' // For GraphQL SDK
+        implementation("com.expediagroup:rapid-sdk:1.0.0")
+        //implementation 'com.expediagroup:rapid-sdk:5.4.1' // Check Maven Central for latest
+        //implementation 'com.expediagroup:expediagroup-sdk-rest:{latest-version}' // For REST SDK
+        //implementation 'com.expediagroup:expediagroup-sdk-graphql:{latest-version}' // For GraphQL SDK
 
         // HTTP transport (OkHttp-based)
-        implementation 'com.expediagroup:expediagroup-sdk-transport-okhttp:{latest-version}'
+        //implementation 'com.expediagroup:expediagroup-sdk-transport-okhttp:{latest-version}'
     }
     }
 }
