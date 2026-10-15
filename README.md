@@ -1,3 +1,3 @@
 # WaveMap
 
-Weather.com REST api client with mapped info of local surf spots
+Betting on EAN Rapid api client to create a Hotel mashup close to given surf spot
