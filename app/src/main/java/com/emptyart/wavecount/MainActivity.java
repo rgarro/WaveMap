@@ -39,9 +39,9 @@ public class MainActivity extends Activity {
                 Spinner spinner = (Spinner) findViewById(R.id.spinner);
                 String spinnerValue = spinner.getSelectedItem().toString();
                 Log.d("beach", spinnerValue);
-                //Intent intent = new Intent(SkateSessActivity.this, OllieLanding.class);
-                //intent.putExtra("skate_trick", spinnerValue);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, WaveCountActivity.class);
+                intent.putExtra("surf_spot", spinnerValue);
+                startActivity(intent);
             }
         });
     }
