@@ -30,7 +30,7 @@ import android.widget.Spinner;
 public class WaveCountActivity extends Activity {
 
     //Travel Redirect API y los 7 Hoteles donde malparidas mataron playos en Jaco
-    private String lodgeServiceUrl = "https://apim.expedia.com/hotels/listings";
+    public String lodgeServiceUrl = "https://apim.expedia.com/hotels/listings";
     private String apiKey = "34gggbdfgdf6";
     private String sharedSecret = "666";
 
@@ -40,5 +40,6 @@ public class WaveCountActivity extends Activity {
         setContentView(R.layout.activity_wave_count);
 
         String res = new sendGetRequest(this.lodgeServiceUrl);
+        Log.d("EXPEDIA RES", res);
     }
 }
