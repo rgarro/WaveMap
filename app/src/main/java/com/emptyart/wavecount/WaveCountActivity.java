@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Spinner;
+import android.util.Base64;
 /**
  *            |    |    |
  *           )_)  )_)  )_)
@@ -39,7 +40,21 @@ public class WaveCountActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wave_count);
 
-        String res = new sendGetRequest(this.lodgeServiceUrl);
-        Log.d("EXPEDIA RES", res);
+        this.travelApiAuth();
+        //async after travelApiAuthRrsponse
+        //String res = new sendGetRequest(this.lodgeServiceUrl);
+        //Log.d("EXPEDIA RES", res);
+    }
+
+    protected void travelApiAuth(){
+        Log.d("travelApiAuth", "starting travel apiauth");
+        long timestamp = System.currentTimeMillis() / 1000L;
+        String signatureSource = this.apiKey + this.sharedSecret + timestamp;
+        //byte[] data = signatureSource.getBytes("UTF-8");
+        byte[] data = signatureSource.getBytes();
+        String encodedString = Base64.encodeToString(data, Base64.DEFAULT);
+        String header_auth_string = "Basic" + " " + encodedString;
+       //Authorization:Basic OXg5eDl4LTl4OXg5eC05eDl4OXg5eDk6YTFiMmMzZDRlNWY2
+        Log.d("EXPEDIA_AUTH_HEAD", header_auth_string);
     }
 }
