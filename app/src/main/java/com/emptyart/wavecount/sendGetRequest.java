@@ -24,7 +24,10 @@ import java.net.URL;
  * @author Rolando <rgarro@gmail.com>
  */
 public class sendGetRequest {
-    public String sendGetRequest(String requestUrl) {
+
+    public String travelApiAuthHeader;
+
+    public String doRequest(String requestUrl) {
         StringBuilder result = new StringBuilder();
         HttpURLConnection conn = null;
         try {

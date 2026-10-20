@@ -31,7 +31,7 @@ import android.util.Base64;
 public class WaveCountActivity extends Activity {
 
     //Travel Redirect API y los 7 Hoteles donde malparidas mataron playos en Jaco
-    public String lodgeServiceUrl = "https://apim.expedia.com/hotels/listings";
+    private String lodgeServiceUrl = "https://apim.expedia.com/hotels/listings";
     private String apiKey = "34gggbdfgdf6";
     private String sharedSecret = "666";
 
@@ -40,13 +40,14 @@ public class WaveCountActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wave_count);
 
-        this.travelApiAuth();
-        //async after travelApiAuthRrsponse
-        //String res = new sendGetRequest(this.lodgeServiceUrl);
+        //async after travelApiAuthResponse
+        sendGetRequest rq = new sendGetRequest();
+        rq.travelApiAuthHeader = this.travelApiAuthHeader();
+        String res = rq.doRequest(lodgeServiceUrl);
         //Log.d("EXPEDIA RES", res);
     }
 
-    protected void travelApiAuth(){
+    protected String travelApiAuthHeader(){
         Log.d("travelApiAuth", "starting travel apiauth");
         long timestamp = System.currentTimeMillis() / 1000L;
         String signatureSource = this.apiKey + this.sharedSecret + timestamp;
@@ -56,5 +57,6 @@ public class WaveCountActivity extends Activity {
         String header_auth_string = "Basic" + " " + encodedString;
        //Authorization:Basic OXg5eDl4LTl4OXg5eC05eDl4OXg5eDk6YTFiMmMzZDRlNWY2
         Log.d("EXPEDIA_AUTH_HEAD", header_auth_string);
+        return header_auth_string;
     }
 }
