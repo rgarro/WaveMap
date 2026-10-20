@@ -26,6 +26,7 @@ import java.net.URL;
 public class sendGetRequest {
 
     public String travelApiAuthHeader;
+    public Integer ids_incremental_index;//castaearlo a un global para ++ mas tarde despues de la tocola ..
 
     public String doRequest(String requestUrl) {
         StringBuilder result = new StringBuilder();
@@ -34,6 +35,12 @@ public class sendGetRequest {
             URL url = new URL(requestUrl);
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
+            //json
+            //conn.setRequestProperty("Content-Type", "application/json");
+            conn.setRequestProperty("Accept", "application/vnd.exp-hotel.v3+json");
+            conn.setRequestProperty("Partner-Transaction-Id", this.ids_incremental_index.toString());
+
+
             conn.setConnectTimeout(15000);
             conn.setReadTimeout(15000);
 
