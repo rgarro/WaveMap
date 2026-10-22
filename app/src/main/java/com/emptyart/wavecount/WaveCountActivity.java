@@ -45,6 +45,7 @@ public class WaveCountActivity extends Activity {
         rq.travelApiAuthHeader = this.travelApiAuthHeader();
         String res = rq.doRequest(lodgeServiceUrl);
         Log.d("EXPEDIA RES", res);
+        Log.d("EXPEDIA RES", "---------- ENCONTRAR ESTO .........---");
     }
 
     protected String travelApiAuthHeader(){

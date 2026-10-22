@@ -41,8 +41,8 @@ public class sendGetRequest {
             //conn.setRequestProperty("Content-Type", "application/json");
             conn.setRequestProperty("Accept", "application/vnd.exp-hotel.v3+json");
             conn.setRequestProperty("Partner-Transaction-Id", this.ids_incremental_index.toString());
-            conn.setRequestProperty("Key", "la Api key del conf aqui");
-            conn.setRequestProperty("Authorization","do the authorization and get token here");
+            conn.setRequestProperty("Key", "***ds3tf46ap3tuymfr");//key
+            conn.setRequestProperty("Authorization",this.travelApiAuthHeader);
 
             conn.setConnectTimeout(15000);
             conn.setReadTimeout(15000);
