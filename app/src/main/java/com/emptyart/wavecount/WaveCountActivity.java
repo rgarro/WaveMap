@@ -31,6 +31,9 @@ import android.util.Base64;
 public class WaveCountActivity extends Activity {
 
     //Travel Redirect API y los 7 Hoteles donde malparidas mataron playos en Jaco
+    //https://apim.expedia.com/hotels/listings?locationKeyword=Jaco&checkIn=2027-11-01&checkOut=2027-11-02
+    //https://apim.expedia.com/hotels/listings?geoLocation=40.714269,-74.005973&checkIn=2027-11-01&checkOut=2027-11-02
+    private String getVars = "?geoLocation=9.6150185,-84.6260356&checkIn=2027-11-01&checkOut=2027-11-02";
     private String lodgeServiceUrl = "https://apim.expedia.com/hotels/listings";
     private String apiKey = "34gggbdfgdf6";
     private String sharedSecret = "666";
@@ -43,7 +46,7 @@ public class WaveCountActivity extends Activity {
         //async after travelApiAuthResponse
         sendGetRequest rq = new sendGetRequest();
         rq.travelApiAuthHeader = this.travelApiAuthHeader();
-        String res = rq.doRequest(lodgeServiceUrl);
+        String res = rq.doRequest(lodgeServiceUrl+getVars);
         Log.d("EXPEDIA RES", res);
         Log.d("EXPEDIA RES", "---------- ENCONTRAR ESTO .........---");
     }
