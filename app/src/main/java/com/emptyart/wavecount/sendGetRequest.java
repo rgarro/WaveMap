@@ -28,7 +28,7 @@ import java.net.URL;
 public class sendGetRequest {
 
     public String travelApiAuthHeader;
-    public Integer ids_incremental_index = 1001;//castaearlo a un global para ++ mas tarde despues de la tocola ..
+    public Integer ids_incremental_index = 1001;//castaearlo a un global para ++ mas tarde despues de la tocola .
 
     public String doRequest(String requestUrl) {
         StringBuilder result = new StringBuilder();

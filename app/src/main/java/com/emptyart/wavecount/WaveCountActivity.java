@@ -42,8 +42,23 @@ public class WaveCountActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wave_count);
-
+//get previous spinner value to select coordinates
         //async after travelApiAuthResponse
+        if (getIntent() != null) {
+            String surfSpot = getIntent().getStringExtra("surf_spot");
+            if (surfSpot == "Jaco"){
+                this.getVars = "?geoLocation=9.6150185,-84.6260356&checkIn=2027-11-01&checkOut=2027-11-02";
+            }
+            if (surfSpot == "Barranca"){
+                this.getVars = "?geoLocation=9.9630624,-84.7419429&checkIn=2027-11-01&checkOut=2027-11-02";
+            }
+            if (surfSpot == "Caldera"){
+                this.getVars = "?geoLocation=9.9168271,-84.7206725&checkIn=2027-11-01&checkOut=2027-11-02";
+            }
+            if (surfSpot == "Tivives"){
+                this.getVars = "?geoLocation=9.875021,-84.7022384&checkIn=2027-11-01&checkOut=2027-11-02";
+            }
+        }
         sendGetRequest rq = new sendGetRequest();
         rq.travelApiAuthHeader = this.travelApiAuthHeader();
         String res = rq.doRequest(lodgeServiceUrl+getVars);
