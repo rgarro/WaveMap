@@ -64,6 +64,8 @@ public class WaveCountActivity extends Activity {
         String res = rq.doRequest(lodgeServiceUrl+getVars);
         Log.d("EXPEDIA RES", res);
         Log.d("EXPEDIA RES", "---------- ENCONTRAR ESTO .........---");
+        TextView EANTextView = (TextView) findViewById(R.id.textView);
+        EANTextView.setText(res);
     }
 
     protected String travelApiAuthHeader(){
